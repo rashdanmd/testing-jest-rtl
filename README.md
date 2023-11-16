@@ -17,5 +17,3 @@ Tests should resembke how users interact with code (component, page, etc.)as muc
 6.  getByAltText
 7.  getByTitle
 8.  getByTestId
-
-## Deploy on Vercel
