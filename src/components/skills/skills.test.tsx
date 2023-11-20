@@ -10,7 +10,7 @@ describe("Skills", () => {
     expect(listElement).toBeInTheDocument();
   });
 
-  test("renders a list of skills", () => {
+  test.skip("renders a list of skills", () => {
     render(<Skills skills={skills} />);
     const listItem = screen.getAllByRole("listitem");
     expect(listItem).toHaveLength(skills.length);

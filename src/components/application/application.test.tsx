@@ -19,8 +19,24 @@ describe("Application", () => {
     const pElement = screen.getByText("All fields are mandatory");
     expect(pElement).toBeInTheDocument();
 
+    // Text string match task
+    // Use substring match with string, regex, and custom function
+
+    //string
+    const pElementSubString = screen.getByText("are mandator", {
+      exact: false,
+    });
+    expect(pElementSubString).toBeInTheDocument();
+
     const nameElem = screen.getByRole("textbox", { name: "Name" });
     expect(nameElem).toBeInTheDocument();
+
+    //regex
+    const pElementRegex = screen.getByText(/are mandator/);
+    expect(pElementRegex).toBeInTheDocument();
+
+    //custom function
+    screen.getByText((content) => content.startsWith("All"));
 
     /***** getBy - LabelText ******/
     const nameElement2 = screen.getByLabelText("Name");
