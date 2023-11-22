@@ -1,22 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { skillsProps } from "./skills.types";
 
-// const Skills: React.FC<skillsProps> = ({ skills }) => {
-//   return (
-//     <>
-//       <ul>
-//         {skills.map((skill) => (
-//           <li key={skill}>{skill}</li>
-//         ))}
-//       </ul>
-//     </>
-//   );
-// };
-const Skills = (props: skillsProps) => {
+const SkillsTwo = (props: skillsProps) => {
   const { skills } = props;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoggedIn(true);
+    }, 1001);
+  }, []);
+
   return (
     <>
       <ul>
@@ -34,4 +30,4 @@ const Skills = (props: skillsProps) => {
   );
 };
 
-export default Skills;
+export default SkillsTwo;
